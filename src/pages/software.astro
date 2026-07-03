@@ -1,0 +1,22 @@
+---
+import BaseLayout from "../components/BaseLayout.astro";
+import SoftwareCard from "../components/SoftwareCard.astro";
+import { software } from "../data/software";
+---
+
+<BaseLayout
+  title="Software"
+  description="Scientific software and computational mechanics projects by Danilo Borges Cavalcanti."
+>
+  <header class="page-header">
+    <p class="eyebrow">Software</p>
+    <h1>Scientific software</h1>
+    <p>
+      Selected software entries with research role, scope, and project links.
+    </p>
+  </header>
+
+  <div class="card-grid">
+    {software.map((entry) => <SoftwareCard entry={entry} />)}
+  </div>
+</BaseLayout>

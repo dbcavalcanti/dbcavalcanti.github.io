@@ -1,0 +1,51 @@
+---
+import BaseLayout from "../../components/BaseLayout.astro";
+import PdfResourceList from "../../components/PdfResourceList.astro";
+import Tag from "../../components/Tag.astro";
+import { courses, type Course } from "../../data/courses";
+
+export function getStaticPaths() {
+  return courses.map((course) => ({
+    params: { slug: course.slug },
+    props: { course }
+  }));
+}
+
+type Props = {
+  course: Course;
+};
+
+const { course } = Astro.props;
+---
+
+<BaseLayout title={course.title} description={course.description}>
+  <header class="page-header">
+    <p class="eyebrow">Teaching</p>
+    <h1>{course.title}</h1>
+    <p>{course.description}</p>
+    <dl class="metadata-grid">
+      <div>
+        <dt>Institution</dt>
+        <dd>{course.institution}</dd>
+      </div>
+      <div>
+        <dt>Academic year</dt>
+        <dd>{course.academicYear}</dd>
+      </div>
+      <div>
+        <dt>Level</dt>
+        <dd>{course.level}</dd>
+      </div>
+    </dl>
+    <div class="tag-row" aria-label="Material languages">
+      {course.languages.map((language) => <Tag label={language} />)}
+    </div>
+  </header>
+
+  <section class="section">
+    <header class="section-header">
+      <h2>Classes and materials</h2>
+    </header>
+    <PdfResourceList resources={course.classes} />
+  </section>
+</BaseLayout>

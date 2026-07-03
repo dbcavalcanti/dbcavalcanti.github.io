@@ -1,0 +1,22 @@
+---
+import BaseLayout from "../../components/BaseLayout.astro";
+import CourseCard from "../../components/CourseCard.astro";
+import { courses } from "../../data/courses";
+---
+
+<BaseLayout
+  title="Teaching"
+  description="Teaching materials and course pages by Danilo Borges Cavalcanti."
+>
+  <header class="page-header">
+    <p class="eyebrow">Teaching</p>
+    <h1>Courses and teaching material</h1>
+    <p>
+      Course pages collect class topics, metadata, languages, and PDF resources.
+    </p>
+  </header>
+
+  <div class="card-grid two-columns">
+    {courses.map((course) => <CourseCard course={course} />)}
+  </div>
+</BaseLayout>

@@ -1,0 +1,38 @@
+---
+type Resource = {
+  number?: number;
+  topic: string;
+  description?: string;
+  materialType?: string;
+  pdf: string;
+  language: string;
+  date?: string;
+};
+
+type Props = {
+  resources: Resource[];
+};
+
+const { resources } = Astro.props;
+---
+
+<div class="resource-list">
+  {
+    resources.map((resource) => (
+      <article class="resource-item">
+        <div>
+          <p class="resource-meta">
+            {resource.number && `Class ${resource.number} · `}
+            {resource.materialType || resource.date}
+          </p>
+          <h3>{resource.topic}</h3>
+          {resource.description && <p>{resource.description}</p>}
+        </div>
+        <div class="resource-action">
+          <span class="tag">{resource.language}</span>
+          <a href={resource.pdf}>PDF</a>
+        </div>
+      </article>
+    ))
+  }
+</div>

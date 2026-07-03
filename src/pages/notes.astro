@@ -1,0 +1,30 @@
+---
+import BaseLayout from "../components/BaseLayout.astro";
+import PdfResourceList from "../components/PdfResourceList.astro";
+import { notes } from "../data/notes";
+
+const noteResources = notes.map((note) => ({
+  topic: note.topic,
+  description: note.description,
+  language: note.language,
+  date: note.date,
+  pdf: note.pdf
+}));
+---
+
+<BaseLayout
+  title="Personal study notes"
+  description="Informal study notes by Danilo Borges Cavalcanti."
+>
+  <header class="page-header">
+    <p class="eyebrow">Notes</p>
+    <h1>Personal study notes</h1>
+    <p>
+      These notes are informal study materials prepared during my own learning and
+      research work. They are shared for transparency and may contain evolving
+      explanations.
+    </p>
+  </header>
+
+  <PdfResourceList resources={noteResources} />
+</BaseLayout>

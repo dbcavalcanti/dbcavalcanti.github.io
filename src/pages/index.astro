@@ -1,0 +1,91 @@
+---
+import BaseLayout from "../components/BaseLayout.astro";
+import Card from "../components/Card.astro";
+import Section from "../components/Section.astro";
+import Tag from "../components/Tag.astro";
+import Timeline, { type TimelineItem } from "../components/Timeline.astro";
+import { education } from "../data/education";
+import { positions } from "../data/positions";
+import { profile } from "../data/profile";
+import { projects } from "../data/projects";
+
+const educationItems: TimelineItem[] = education.map((item) => ({
+  period: item.period,
+  title: item.degree,
+  subtitle: item.institution,
+  description: item.thesis,
+  details: [
+    item.supervisors ? `Supervisors: ${item.supervisors}` : "",
+    item.distinction ? `Distinction: ${item.distinction}` : ""
+  ].filter(Boolean),
+  link: item.pdf ? { href: item.pdf, label: "Thesis / final project PDF" } : undefined
+}));
+
+const positionItems: TimelineItem[] = positions.map((item) => ({
+  period: item.period,
+  title: item.role,
+  subtitle: `${item.institution} · ${item.location}`,
+  description: item.description
+}));
+---
+
+<BaseLayout>
+  <section class="hero">
+    <div class="hero-content">
+      <p class="eyebrow">Academic portfolio</p>
+      <h1>{profile.name}</h1>
+      <p class="hero-title">{profile.title}</p>
+      <p class="hero-summary">{profile.description} {profile.identity}</p>
+      <div class="button-row" aria-label="Profile links">
+        <a class="button primary" href={profile.links.cv}>CV</a>
+        <a class="button" href={profile.links.orcid}>ORCID</a>
+        <a class="button" href={profile.links.github}>GitHub</a>
+        <a class="button" href={profile.links.email}>Email</a>
+      </div>
+    </div>
+    <figure class="hero-visual">
+      <img
+        src="/images/research-hero.png"
+        alt="Scientific illustration of fractured porous media with finite element mesh and flow lines"
+      />
+    </figure>
+  </section>
+
+  <Section title="About me">
+    <div class="prose">
+      {profile.about.map((paragraph) => <p>{paragraph}</p>)}
+    </div>
+  </Section>
+
+  <Section title="Research interests">
+    <div class="tag-row">
+      {profile.interests.map((interest) => <Tag label={interest} />)}
+    </div>
+  </Section>
+
+  <Section title="Education" intro="Degrees and thesis work.">
+    <Timeline items={educationItems} />
+  </Section>
+
+  <Section
+    title="Professional experience"
+    intro="Research and engineering positions."
+  >
+    <Timeline items={positionItems} />
+  </Section>
+
+  <Section title="Projects" intro="Selected R&D projects.">
+    <div class="card-grid two-columns">
+      {
+        projects.map((project) => (
+          <Card>
+            <p class="card-meta">{project.period}</p>
+            <h3>{project.title}</h3>
+            <p>{project.description}</p>
+            <p class="project-funding">Funding: {project.funding}</p>
+          </Card>
+        ))
+      }
+    </div>
+  </Section>
+</BaseLayout>

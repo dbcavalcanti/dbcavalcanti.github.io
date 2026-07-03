@@ -1,0 +1,22 @@
+---
+import Tag from "./Tag.astro";
+import type { Course } from "../data/courses";
+
+type Props = {
+  course: Course;
+};
+
+const { course } = Astro.props;
+---
+
+<a class="card course-card" href={`/teaching/${course.slug}/`}>
+  <div>
+    <p class="card-meta">{course.level}</p>
+    <h3>{course.title}</h3>
+    <p>{course.description}</p>
+  </div>
+  <div class="tag-row" aria-label="Course languages">
+    {course.languages.map((language) => <Tag label={language} />)}
+  </div>
+  <p class="card-foot">{course.institution} · {course.academicYear}</p>
+</a>

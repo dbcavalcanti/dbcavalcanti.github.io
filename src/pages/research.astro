@@ -1,0 +1,20 @@
+---
+import BaseLayout from "../components/BaseLayout.astro";
+import PublicationList from "../components/PublicationList.astro";
+import { publicationGroups } from "../data/publications";
+---
+
+<BaseLayout
+  title="Research"
+  description="Research publications and manuscripts by Danilo Borges Cavalcanti."
+>
+  <header class="page-header">
+    <p class="eyebrow">Research</p>
+    <h1>Publications and research output</h1>
+    <p>
+      References grouped by publication type, with DOI and manuscript links where available.
+    </p>
+  </header>
+
+  <PublicationList groups={publicationGroups} />
+</BaseLayout>

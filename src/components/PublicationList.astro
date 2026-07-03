@@ -1,0 +1,45 @@
+---
+import type { PublicationGroup } from "../data/publications";
+
+type Props = {
+  groups: PublicationGroup[];
+};
+
+const { groups } = Astro.props;
+---
+
+<div class="publication-list">
+  {
+    groups.map((group) => (
+      <section class="publication-group" aria-labelledby={`${group.id}-heading`}>
+        <header class="publication-group-header">
+          <h2 id={`${group.id}-heading`}>{group.title}</h2>
+          {group.description && <p>{group.description}</p>}
+        </header>
+        {
+          group.publications.length > 0 ? (
+            <ol class="reference-list">
+              {group.publications.map((publication) => (
+                <li class="reference-item">
+                  <p class="reference-authors">{publication.authors}</p>
+                  <p>
+                    {publication.year && <span>{publication.year}. </span>}
+                    <strong>{publication.title}</strong>.
+                  </p>
+                  <p class="reference-venue">{publication.venue}</p>
+                  {
+                    publication.link && (
+                      <a href={publication.link.href}>{publication.link.label}</a>
+                    )
+                  }
+                </li>
+              ))}
+            </ol>
+          ) : (
+            <p class="muted">No entries added yet.</p>
+          )
+        }
+      </section>
+    ))
+  }
+</div>

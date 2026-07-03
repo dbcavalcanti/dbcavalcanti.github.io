@@ -1,0 +1,18 @@
+---
+import type { SoftwareEntry } from "../data/software";
+
+type Props = {
+  entry: SoftwareEntry;
+};
+
+const { entry } = Astro.props;
+---
+
+<article class="card software-card">
+  <p class="card-meta">{entry.role}</p>
+  <h3>{entry.name}</h3>
+  <p>{entry.description}</p>
+  <div class="inline-links">
+    {entry.links.map((link) => <a href={link.href}>{link.label}</a>)}
+  </div>
+</article>
