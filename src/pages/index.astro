@@ -24,31 +24,14 @@ const educationItems: TimelineItem[] = education.map((item) => ({
 const positionItems: TimelineItem[] = positions.map((item) => ({
   period: item.period,
   title: item.role,
-  subtitle: `${item.institution} · ${item.location}`,
+  subtitle: `${item.institution} - ${item.location}`,
   description: item.description
 }));
 ---
 
 <BaseLayout>
   <section class="hero">
-    <div class="hero-content">
-      <p class="eyebrow">Academic portfolio</p>
-      <h1>{profile.name}</h1>
-      <p class="hero-title">{profile.title}</p>
-      <p class="hero-summary">{profile.description} {profile.identity}</p>
-      <div class="button-row" aria-label="Profile links">
-        <a class="button primary" href={profile.links.cv}>CV</a>
-        <a class="button" href={profile.links.orcid}>ORCID</a>
-        <a class="button" href={profile.links.github}>GitHub</a>
-        <a class="button" href={profile.links.email}>Email</a>
-      </div>
-    </div>
-    <figure class="hero-visual">
-      <img
-        src="/images/research-hero.png"
-        alt="Scientific illustration of fractured porous media with finite element mesh and flow lines"
-      />
-    </figure>
+    <h1>{profile.name}</h1>
   </section>
 
   <Section title="About me">
