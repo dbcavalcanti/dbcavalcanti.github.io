@@ -26,7 +26,7 @@ export const courses: Course[] = [
     level: "Undergraduate",
     languages: ["Catalan"],
     description:
-      "Teaching materials for elasticity theory, including mathematical preliminaries, kinematics, stresses and equilibrium equations, and an introductory finite element bar formulation.",
+      "Materials I prepared for Teoria de l'elasticitat, an undergraduate course at the Universitat Politecnica de Catalunya (UPC) in Barcelona. I taught these classes in Catalan as part of the teaching practice for the MentorFirst Programme, under the tutoring of Ignasi de Pouplana. The material covers mathematical preliminaries, kinematics, stresses and equilibrium equations, and an introductory finite element formulation for bar elements.",
     slug: "elasticitat",
     classes: [
       {

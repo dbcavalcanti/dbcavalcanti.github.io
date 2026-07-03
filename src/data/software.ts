@@ -19,7 +19,7 @@ export const software: SoftwareEntry[] = [
       "Open-source MATLAB-based object-oriented finite element framework for multiphysics simulations in porous and fractured media. It supports rapid prototyping, verification, and extension of numerical formulations, including mechanical, hydraulic, two-phase flow, and coupled hydro-mechanical models, with embedded finite element capabilities for fractures and faults.",
     links: [
       { label: "GitHub", href: "https://github.com/dbcavalcanti" },
-      { label: "Documentation", href: "#" }
+      { label: "Documentation", href: "https://github.com/dbcavalcanti/porousLab/wiki" }
     ]
   },
   {
@@ -27,6 +27,6 @@ export const software: SoftwareEntry[] = [
     role: "Collaborator / contributor through Tecgraf-related research activities.",
     description:
       "Experience collaborating with and working in GeMA, developed at Tecgraf, in the context of multiphysics simulation and computational mechanics. This entry reflects research use and contribution experience, not software ownership. Additional scientific programming experience includes implementation work with C++, Python, MATLAB, Lua, and Tcl, and numerical frameworks such as GeMA and Kratos.",
-    links: [{ label: "Project link", href: "#" }]
+    links: [{ label: "Project link", href: "https://www.tecgraf.puc-rio.br/gema/" }]
   }
 ];
