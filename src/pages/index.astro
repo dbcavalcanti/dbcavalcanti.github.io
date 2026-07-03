@@ -18,7 +18,8 @@ const educationItems: TimelineItem[] = education.map((item) => ({
     item.supervisors ? `Supervisors: ${item.supervisors}` : "",
     item.distinction ? `Distinction: ${item.distinction}` : ""
   ].filter(Boolean),
-  link: item.pdf ? { href: item.pdf, label: "Thesis / final project PDF" } : undefined
+  tags: item.language ? [item.language] : [],
+  links: item.resources
 }));
 
 const positionItems: TimelineItem[] = positions.map((item) => ({

@@ -4,7 +4,7 @@ type Resource = {
   topic: string;
   description?: string;
   materialType?: string;
-  pdf: string;
+  pdf?: string;
   language: string;
   date?: string;
 };
@@ -22,7 +22,7 @@ const { resources } = Astro.props;
       <article class="resource-item">
         <div>
           <p class="resource-meta">
-            {resource.number && `Class ${resource.number} · `}
+            {resource.number && `Class ${resource.number} - `}
             {resource.materialType || resource.date}
           </p>
           <h3>{resource.topic}</h3>
@@ -30,7 +30,13 @@ const { resources } = Astro.props;
         </div>
         <div class="resource-action">
           <span class="tag">{resource.language}</span>
-          <a href={resource.pdf}>PDF</a>
+          {
+            resource.pdf ? (
+              <a href={resource.pdf}>PDF</a>
+            ) : (
+              <span class="muted">In preparation</span>
+            )
+          }
         </div>
       </article>
     ))

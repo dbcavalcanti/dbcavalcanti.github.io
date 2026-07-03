@@ -391,6 +391,11 @@ main {
   color: var(--muted);
 }
 
+.timeline-tags,
+.timeline-links {
+  margin-top: 0.65rem;
+}
+
 .detail-list {
   margin: 0.55rem 0;
   padding-left: 1.2rem;

@@ -13,7 +13,7 @@ export const projects: ProjectItem[] = [
     funding: "ExxonMobil",
     period: "07/2023-01/2027",
     description:
-      "Numerical modeling for hydro-mechanical processes associated with CO2 geological storage."
+      "Assessment of geological fault reactivation risk by CO2 injection processes in geological deposits. Principal investigators: Deane Roehl and Eugenio Onate."
   },
   {
     title:
@@ -21,6 +21,6 @@ export const projects: ProjectItem[] = [
     funding: "Spanish Ministry of Science, Innovation and Universities",
     period: "12/2022-11/2024",
     description:
-      "Open-source scientific software and workflows for CO2 storage simulation."
+      "Open-source software for the digitalization of the CO2 storage process. Principal investigators: Ignasi de Pouplana and Guillem Casas."
   }
 ];

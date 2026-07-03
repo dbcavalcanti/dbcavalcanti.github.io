@@ -18,5 +18,5 @@ const { course } = Astro.props;
   <div class="tag-row" aria-label="Course languages">
     {course.languages.map((language) => <Tag label={language} />)}
   </div>
-  <p class="card-foot">{course.institution} · {course.academicYear}</p>
+  <p class="card-foot">{course.institution} - {course.academicYear}</p>
 </a>

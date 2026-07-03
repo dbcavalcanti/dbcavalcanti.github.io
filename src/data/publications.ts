@@ -83,11 +83,89 @@ export const publicationGroups: PublicationGroup[] = [
   {
     id: "conference",
     title: "Conference proceedings",
-    publications: []
+    publications: [
+      {
+        authors:
+          "CAVALCANTI, D.B.; SOUZA, C.; MENDES, C. A.; MEJIA, C.; POUPLANA, I.; CASAS, G.; ROEHL, D.",
+        year: "2025",
+        title:
+          "Three-dimensional hydromechanical simulation of naturally fractured reservoirs using an embedded finite element approach",
+        venue:
+          "XVIII International Conference on Computational Plasticity (COMPLAS), Barcelona, Spain, September 2-5, 2025",
+        type: "conference"
+      },
+      {
+        authors:
+          "CAVALCANTI, D.B.; MEJIA, C.; ROEHL, D.M.; MARTHA, L.F.; POUPLANA, I.; CASAS, G.",
+        year: "2024",
+        title:
+          "Assessment of geological fault reactivation using a fully coupled hydromechanical embedded finite element approach",
+        venue:
+          "Proceedings of the 9th European Congress on Computational Methods in Applied Sciences and Engineering (ECCOMAS 2024), Lisboa, Portugal, June 2024",
+        type: "conference"
+      },
+      {
+        authors:
+          "CAVALCANTI, D.B.; MEJIA, C.; ROEHL, D.M.; MARTHA, L.F.; POUPLANA, I.; CASAS, G.",
+        year: "2023",
+        title:
+          "An improved embedded finite element formulation for investigating fluid flow behavior in fractured porous media",
+        venue:
+          "Proceedings of the XLIV Ibero-Latin-American Congress on Computational Methods in Engineering (CILAMCE 2023), ABMEC/FEUP, Porto, Portugal, November 2023. Paper ID: 760, p. 7",
+        type: "conference"
+      },
+      {
+        authors:
+          "CAVALCANTI, D.B.; MEJIA, C.; ROEHL, D.M.; MARTHA, L.F.",
+        year: "2023",
+        title:
+          "Numerical experiments to assess the behavior of finite elements with embedded strong discontinuities",
+        venue:
+          "Proceedings of the XVII International Conference on Computational Plasticity: Fundamentals and Applications (COMPLAS 2023), Barcelona, Spain. CIMNE, 2023",
+        type: "conference"
+      },
+      {
+        authors: "CAVALCANTI, D.B.; RANGEL, R. L. M.; MARTHA, L. F.",
+        year: "2022",
+        title:
+          "Nonlinear analysis of inelastic frames considering a corotational approach and plasticity by layers: a discussion about computational implementation",
+        venue:
+          "Nonlinear analysis, stability and structural dynamics (CILAMCE 2022), Foz do Iguacu, Parana. ABMEC, 2022",
+        type: "conference"
+      },
+      {
+        authors: "CAVALCANTI, D.B.; RANGEL, R. L. M.; MARTHA, L. F.",
+        year: "2022",
+        title:
+          "Numerical experiments to assess the performance of different formulations and solution algorithms for geometrically nonlinear analysis of two-dimensional frames",
+        venue:
+          "Nonlinear analysis, stability and structural dynamics (CILAMCE 2022), Foz do Iguacu, Parana. ABMEC, 2022",
+        type: "conference"
+      },
+      {
+        authors: "CAVALCANTI, D.B.; ALMEIDA, S. R. M.; ARAUJO, D. L.",
+        year: "2021",
+        title:
+          "Multi-material continuum topology optimization with multiple volume constraints and material nonlinearity",
+        venue:
+          "Topology optimization of multifunctional materials, fluids and structures (XLII CILAMCE and III PANACM, 2021), Rio de Janeiro, Brazil. ABMEC, 2021",
+        type: "conference"
+      }
+    ]
   },
   {
     id: "talk",
     title: "Invited talks",
-    publications: []
+    publications: [
+      {
+        authors: "CAVALCANTI, D.B.",
+        year: "2026",
+        title:
+          "Challenges in the numerical modelling of fractured and faulted geological media",
+        venue:
+          "Invited speaker, Workshop on the Limits and Promise of Geo-Energies, organized by IMEDEA (CSIC-UIB), Palma de Mallorca, Spain, June 1-2, 2026",
+        type: "talk"
+      }
+    ]
   }
 ];

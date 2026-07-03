@@ -10,7 +10,9 @@ export type TimelineItem = {
   subtitle?: string;
   description?: string;
   details?: string[];
+  tags?: string[];
   link?: TimelineLink;
+  links?: TimelineLink[];
 };
 
 type Props = {
@@ -31,6 +33,15 @@ const { items } = Astro.props;
           {item.subtitle && <p class="timeline-subtitle">{item.subtitle}</p>}
           {item.description && <p>{item.description}</p>}
           {
+            item.tags && item.tags.length > 0 && (
+              <div class="tag-row timeline-tags">
+                {item.tags.map((tag) => (
+                  <span class="tag">{tag}</span>
+                ))}
+              </div>
+            )
+          }
+          {
             item.details && (
               <ul class="detail-list">
                 {item.details.map((detail) => (
@@ -39,7 +50,16 @@ const { items } = Astro.props;
               </ul>
             )
           }
-          {item.link && <a href={item.link.href}>{item.link.label}</a>}
+          {
+            (item.links || item.link) && (
+              <div class="inline-links timeline-links">
+                {item.link && <a href={item.link.href}>{item.link.label}</a>}
+                {item.links?.map((link) => (
+                  <a href={link.href}>{link.label}</a>
+                ))}
+              </div>
+            )
+          }
         </div>
       </li>
     ))
